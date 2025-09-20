@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PopCornFactory">
         <activity
+            android:name=".MenuListaPeliculas"
+            android:exported="false" />
+        <activity
             android:name=".DetallePelicula"
             android:exported="false" />
         <activity

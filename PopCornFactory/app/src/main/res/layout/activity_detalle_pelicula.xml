@@ -6,35 +6,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".DetallePelicula">
+
+    <ImageView
+        android:id="@+id/iv_pelicula_imagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bones"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/iv_pelicula_imagen"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/bones" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="4dp">
 
         <TextView
             android:id="@+id/tv_nombre_pelicula"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BONES"
-            android:textSize="20sp"
-            android:gravity="center"/>
+            android:text="BONES "
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:paddingEnd="8dp" />
 
-        <TextView
-            android:id="@+id/tv_pelicula_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Loremdjakfjsfkwejfkwejfekef,fkwsjfkjfe"
-            android:textSize="20sp"/>
-
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/yellow" />
     </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_pelicula_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet"
+        android:textColor="@color/white"
+        android:padding="16dp"/>
 
 </LinearLayout>
