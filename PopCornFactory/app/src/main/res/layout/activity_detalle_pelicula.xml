@@ -53,6 +53,6 @@
         android:layout_height="wrap_content"
         android:text="Lorem ipsum dolor sit amet"
         android:textColor="@color/white"
-        android:padding="16dp"/>
+        android:padding="16sp"/>
 
 </LinearLayout>
