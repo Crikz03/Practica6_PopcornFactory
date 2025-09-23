@@ -31,7 +31,7 @@ Just lay down, make some popcorn and enjoy!"
 
     <Button
         android:id="@+id/button_get_started"
-        android:layout_width="219dp"
+        android:layout_width="160dp"
         android:layout_height="40dp"
         android:text="GET ME IN!"
         android:layout_marginTop="5dp"

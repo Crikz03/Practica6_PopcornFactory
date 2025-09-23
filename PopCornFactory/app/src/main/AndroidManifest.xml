@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PopCornFactory">
         <activity
+            android:name=".ResumenCompra"
+            android:exported="false" />
+        <activity
+            android:name=".SeatSelection"
+            android:exported="false" />
+        <activity
             android:name=".MenuListaPeliculas"
             android:exported="false" />
         <activity
