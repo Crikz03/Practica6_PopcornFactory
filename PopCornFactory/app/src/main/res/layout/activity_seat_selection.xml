@@ -391,6 +391,17 @@
 
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/etNombreCliente"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre completo"
+        android:layout_gravity="center"
+        android:textColor="@color/babygray"
+        android:textColorHint="@color/babygray"
+        android:backgroundTint="@color/babygray"
+        android:layout_marginTop="16dp" />
+
     <Button
         android:id="@+id/confirm"
         android:layout_width="160dp"

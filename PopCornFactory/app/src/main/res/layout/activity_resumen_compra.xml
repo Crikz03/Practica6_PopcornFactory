@@ -1,10 +1,186 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResumenCompra">
+    android:orientation="vertical"
+    android:background="@color/almostblack"
+    tools:context=".DetallePelicula">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:id="@+id/iv_pelicula_imagen"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="25dp">
+            <TextView
+                android:id="@+id/tv_resumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resumen de compra"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="30sp"
+                android:textColor="@color/mustard"
+                android:paddingTop="20dp"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.5dp"
+                android:background="@color/mustard"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="45dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Película:"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="4dp"
+                android:paddingTop="25dp"
+                android:paddingStart="25dp"
+                android:scrollbars="vertical"
+                android:textStyle="bold"
+                android:overScrollMode="ifContentScrolls"
+                android:gravity="start"
+                />
+            <TextView
+                android:id="@+id/tv_pelicula"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="4dp"
+                android:paddingTop="25dp"
+                android:paddingStart="15dp"
+                android:scrollbars="vertical"
+                android:overScrollMode="ifContentScrolls"
+                android:gravity="start"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asiento:"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="4dp"
+                android:paddingTop="25dp"
+                android:paddingStart="25dp"
+                android:scrollbars="vertical"
+                android:textStyle="bold"
+                android:overScrollMode="ifContentScrolls"
+                android:gravity="start"
+                />
+            <TextView
+                android:id="@+id/tv_asiento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="4dp"
+                android:paddingTop="25dp"
+                android:paddingStart="15dp"
+                android:scrollbars="vertical"
+                android:overScrollMode="ifContentScrolls"
+                android:gravity="start"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cliente:"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="4dp"
+                android:paddingTop="25dp"
+                android:paddingStart="25dp"
+                android:scrollbars="vertical"
+                android:textStyle="bold"
+                android:overScrollMode="ifContentScrolls"
+                android:gravity="start"
+                />
+            <TextView
+                android:id="@+id/tv_cliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="4dp"
+                android:paddingTop="25dp"
+                android:paddingStart="15dp"
+                android:scrollbars="vertical"
+                android:overScrollMode="ifContentScrolls"
+                android:gravity="start"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo de pago:"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="4dp"
+                android:paddingTop="25dp"
+                android:paddingStart="25dp"
+                android:scrollbars="vertical"
+                android:textStyle="bold"
+                android:overScrollMode="ifContentScrolls"
+                android:gravity="start"
+                />
+            <TextView
+                android:id="@+id/tv_tipoPago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="4dp"
+                android:paddingTop="25dp"
+                android:paddingStart="15dp"
+                android:scrollbars="vertical"
+                android:overScrollMode="ifContentScrolls"
+                android:gravity="start"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

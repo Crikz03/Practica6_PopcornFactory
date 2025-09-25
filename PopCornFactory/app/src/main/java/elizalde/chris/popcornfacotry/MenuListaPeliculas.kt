@@ -163,6 +163,7 @@ class MenuListaPeliculas : AppCompatActivity() {
                 intento.putExtra("header",pelicula.header)
                 intento.putExtra("sinopsis",pelicula.sinopsis)
                 intento.putExtra("numberSeats", (20-pelicula.seats.size))
+                intento.putExtra("pos",position)
                 context!!.startActivity(intento)
             }
 

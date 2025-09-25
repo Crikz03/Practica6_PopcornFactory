@@ -29,10 +29,11 @@ class DetallePelicula : AppCompatActivity() {
 
         val bundle = intent.extras
         var nseats = 0
+        var id = -1
 
         if (bundle != null) {
             nseats = bundle.getInt("numberSeats")
-
+            id = bundle.getInt("pos")
             iv_pelicula_imagen.setImageResource(bundle.getInt("header"))
             tv_nombre_pelicula.setText(bundle.getString("titulo"))
             tv_pelicula_desc.setText(bundle.getString("sinopsis"))
@@ -46,7 +47,10 @@ class DetallePelicula : AppCompatActivity() {
             buyTickets.setOnClickListener {
                 var intent = Intent(this, SeatSelection::class.java)
 
+                intent.putExtra("id",id)
                 intent.putExtra("name", tv_nombre_pelicula.text)
+                intent.putExtra("header", bundle?.getInt("header"))
+
                 startActivity(intent)
             }
         }
