@@ -14,6 +14,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MenuListaPeliculas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,15 +34,33 @@ class MenuListaPeliculas : AppCompatActivity() {
 
         cargarPeliculas(series, peliculas)
 
-        val gridViewSeries: GridView = findViewById(R.id.gridViewSeries)
-        val gridViewPeliculas: GridView = findViewById(R.id.gridViewPeliculas)
+        val recyclerViewSeries: RecyclerView = findViewById(R.id.recyclerViewSeries)
+        val recyclerViewPeliculas: RecyclerView = findViewById(R.id.recyclerViewPeliculas)
 
-        val seriesAdapter = PeliculaAdapter(series, this)
-        val peliculasAdapter = PeliculaAdapter(peliculas, this)
+        recyclerViewPeliculas.layoutManager = GridLayoutManager(this, 3)
+        recyclerViewPeliculas.adapter = AdaptadorPelículas(peliculas) { pelicula, pos ->
+            val intent = Intent(this, DetallePelicula::class.java)
+            intent.putExtra("titulo", pelicula.titulo)
+            intent.putExtra("sinopsis", pelicula.sinopsis)
+            intent.putExtra("header", pelicula.header)
+            intent.putExtra("numberSeats", 20-pelicula.seats.size)
+            intent.putExtra("pos", pos)
+            startActivity(intent)
+        }
 
-        gridViewSeries.adapter = seriesAdapter
-        gridViewPeliculas.adapter = peliculasAdapter
+        recyclerViewSeries.layoutManager = GridLayoutManager(this, 3)
+        recyclerViewSeries.adapter = AdaptadorPelículas(series) { serie, pos ->
+            val intent = Intent(this, DetallePelicula::class.java)
+            intent.putExtra("titulo", serie.titulo)
+            intent.putExtra("sinopsis", serie.sinopsis)
+            intent.putExtra("header", serie.header)
+            intent.putExtra("numberSeats", 20-serie.seats.size)
+            intent.putExtra("pos", pos)
+            startActivity(intent)
+        }
     }
+
+
 
     fun cargarPeliculas(series: ArrayList<Pelicula>, peliculas: ArrayList<Pelicula>) {
         series.add(Pelicula("Dr. House", R.drawable.drhouse, R.drawable.househeader, "The series follows the life of anti-social, pain killer addict, witty and arrogant medical doctor Gregory" +
@@ -120,55 +141,5 @@ class MenuListaPeliculas : AppCompatActivity() {
                 "Cobb could have seen coming.", arrayListOf<Cliente>()))
     }
 
-    class PeliculaAdapter : BaseAdapter {
-        var peliculas = ArrayList<Pelicula>()
-        var context: Context? = null
 
-        constructor(peliculas: ArrayList<Pelicula>, context: Context?) : super() {
-            this.peliculas = peliculas
-            this.context = context
-        }
-
-        override fun getCount(): Int {
-            return peliculas.size
-        }
-
-        override fun getItem(position: Int): Any {
-            return peliculas[position]
-        }
-
-        override fun getItemId(position: Int): Long {
-            return position.toLong()
-        }
-
-
-
-        override fun getView(position: Int, converView: View?, parent: ViewGroup?): View {
-            var pelicula = peliculas[position]
-            var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            var vista = inflator.inflate(R.layout.pelicula,null)
-
-            var imagen = vista.findViewById(R.id.iv_pelicula) as ImageView
-            var titulo = vista.findViewById(R.id.iv_titulo) as TextView
-
-
-
-            imagen.setImageResource(pelicula.Image)
-            titulo.setText(pelicula.titulo)
-
-            imagen.setOnClickListener{
-                val intento = Intent(context, DetallePelicula::class.java)
-                intento.putExtra("titulo",pelicula.titulo)
-                intento.putExtra("imagen",pelicula.Image)
-                intento.putExtra("header",pelicula.header)
-                intento.putExtra("sinopsis",pelicula.sinopsis)
-                intento.putExtra("numberSeats", (20-pelicula.seats.size))
-                intento.putExtra("pos",position)
-                context!!.startActivity(intento)
-            }
-
-            return vista
-
-        }
-    }
 }
